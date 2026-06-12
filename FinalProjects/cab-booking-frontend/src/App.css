@@ -1,0 +1,130 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+
+/* 🚫 Hide leaflet routing instructions panel */
+.leaflet-routing-container {
+  display: none !important;
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+
+/* ===== Global ===== */
+body {
+  background: #f4f6f9;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+/* ===== Cards ===== */
+.card {
+  border-radius: 12px !important;
+  border: none !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* ===== Headings ===== */
+h2, h4, h5 {
+  font-weight: 600;
+}
+
+/* ===== Status Badges ===== */
+.badge {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+.badge-requested {
+  background: #ffc107;
+  color: #000;
+}
+
+.badge-started {
+  background: #0d6efd;
+  color: #fff;
+}
+
+.badge-completed {
+  background: #198754;
+  color: #fff;
+}
+
+/* ===== Buttons ===== */
+.btn {
+  border-radius: 8px;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #0d6efd, #0b5ed7);
+  border: none;
+}
+
+.btn-success {
+  background: linear-gradient(135deg, #198754, #157347);
+  border: none;
+}
+
+.btn-danger {
+  background: linear-gradient(135deg, #dc3545, #bb2d3b);
+  border: none;
+}
+
+/* ===== Booking Details Box ===== */
+.booking-box {
+  background: #fff;
+  border-left: 5px solid #0d6efd;
+  padding: 12px;
+  border-radius: 8px;
+  margin-top: 15px;
+}
+
+/* ===== Map Wrapper ===== */
+.map-wrapper {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #ddd;
+}
+
+/* Hide routing instructions (already discussed) */
+.leaflet-routing-container {
+  display: none !important;
+}

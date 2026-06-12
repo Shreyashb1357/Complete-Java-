@@ -1,0 +1,78 @@
+CREATE TABLE dept (
+    dept_id INT AUTO_INCREMENT PRIMARY KEY,
+    dept_name VARCHAR(100) NOT NULL,
+    dept_location VARCHAR(100)
+);
+
+
+
+
+
+
+CREATE TABLE emp (
+    emp_id INT AUTO_INCREMENT PRIMARY KEY,
+    emp_name VARCHAR(150) NOT NULL,
+    username VARCHAR(100) UNIQUE NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    email VARCHAR(150) UNIQUE NOT NULL,
+    phone VARCHAR(20),
+    hire_date DATE,
+    dept_id INT,
+    FOREIGN KEY (dept_id) REFERENCES dept(dept_id)
+);
+
+
+
+
+
+
+
+
+
+CREATE TABLE emp_history (
+    history_id INT AUTO_INCREMENT PRIMARY KEY,
+    emp_id INT NOT NULL,
+    action_date DATETIME NOT NULL,
+    action_description TEXT,
+    FOREIGN KEY (emp_id) REFERENCES emp(emp_id)
+);
+
+
+
+
+==================================================================
+
+INSERT INTO dept (dept_name, dept_location) VALUES
+('Human Resources', 'Mumbai'),
+('IT', 'Pune'),
+('Finance', 'Delhi'),
+('Sales', 'Bangalore');
+
+
+
+
+
+INSERT INTO emp
+(emp_name, username, password, email, phone, hire_date, dept_id) 
+VALUES
+('Rahul', 'rahul.s', '1234', 'rahul@example.com', '9876543210', '2023-01-15', 2),
+('Jayesh', 'jayesh.p', '5678', 'jayesh@example.com', '9988776655', '2022-11-20', 1),
+('Amit', 'amit.v', '4321', 'amit@example.com', '9123456780', '2021-05-10', 3),
+('Jack', 'jack.p', '8765', 'jack@example.com', '9090909090', '2024-02-01', 4);
+
+
+
+
+
+
+INSERT INTO emp_history (emp_id, action_date, action_description) VALUES
+(1, '2024-05-10 10:30:00', 'Completed IT security training'),
+(1, '2024-08-01 09:00:00', 'Received performance appraisal rating A'),
+(2, '2024-06-15 15:20:00', 'Updated personal mobile number'),
+(3, '2024-01-05 11:45:00', 'Promoted to Senior Accountant'),
+(4, '2024-03-12 14:10:00', 'Achieved quarterly sales target');
+
+
+
+
+
